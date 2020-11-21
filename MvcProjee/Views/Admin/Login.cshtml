@@ -1,0 +1,153 @@
+﻿@model MvcProjee.Models.userlar
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="~/admintema/image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/admintema/css/owl.theme.css">
+    <link rel="stylesheet" href="~/admintema/css/owl.transitions.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/normalize.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/main.css">
+    <!-- morrisjs CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="~/admintema/css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/calendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="~/admintema/css/calendar/fullcalendar.print.min.css">
+    <!-- forms CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/form/all-type-forms.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/style.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/admintema/css/responsive.css">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="~/admintema/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="error-pagewrap">
+        <div class="error-page-int">
+            <div class="text-center m-b-md custom-login">
+               
+            </div>
+            <div class="content-error">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <form action="/Admin/Login" method="post">
+                            <div class="form-group">
+                                <label class="control-label" for="username">Kullanıcı Adı</label>
+                                <input type="text" placeholder="Kullanıcı Adı"  required="" value="" name="userad"  class="form-control">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Şifre</label>
+                                <input type="password"  placeholder="******" required="" value="" name="usersifre"  class="form-control">
+                                
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Giriş" class="btn btn-success btn-block loginbtn" />
+                            </div>
+                            <div class="form-group">
+                                @ViewBag.hata
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center login-footer">
+               
+            </div>
+        </div>
+    </div>
+    <!-- jquery
+        ============================================ -->
+    <script src="~/admintema/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="~/admintema/js/bootstrap.min.js"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="~/admintema/js/wow.min.js"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="~/admintema/js/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="~/admintema/js/jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="~/admintema/js/owl.carousel.min.js"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="~/admintema/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="~/admintema/js/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="~/admintema/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/admintema/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+        ============================================ -->
+    <script src="~/admintema/js/metisMenu/metisMenu.min.js"></script>
+    <script src="~/admintema/js/metisMenu/metisMenu-active.js"></script>
+    <!-- tab JS
+        ============================================ -->
+    <script src="~/admintema/js/tab.js"></script>
+    <!-- icheck JS
+        ============================================ -->
+    <script src="~/admintema/js/icheck/icheck.min.js"></script>
+    <script src="~/admintema/js/icheck/icheck-active.js"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="~/admintema/js/plugins.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="~/admintema/js/main.js"></script>
+    <!-- tawk chat JS
+        ============================================ -->
+    <script src="~/admintema/js/tawk-chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0ef4cc0cabc46b4bedbcaceb97048b1" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.userlar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.roller" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.kategori" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Database1Model.urunler" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Database1Model.yorumlar" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Database1Model.sepette" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Database1Model.altyorum" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

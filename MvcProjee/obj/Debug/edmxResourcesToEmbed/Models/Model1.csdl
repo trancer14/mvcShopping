@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="userlar">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usersifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="userrol" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="userlar" EntityType="Self.userlar" />
+    <EntitySet Name="roller" EntityType="Database1Model.roller" />
+    <EntitySet Name="kategori" EntityType="Database1Model.kategori" />
+    <EntitySet Name="urunler" EntityType="Database1Model.urunler" />
+    <EntitySet Name="yorumlar" EntityType="Database1Model.yorumlar" />
+    <EntitySet Name="sepette" EntityType="Database1Model.sepette" />
+    <EntitySet Name="altyorum" EntityType="Database1Model.altyorum" />
+  </EntityContainer>
+  <EntityType Name="roller">
+    <Key>
+      <PropertyRef Name="rolid" />
+    </Key>
+    <Property Name="rolid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rolad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="katid" />
+    </Key>
+    <Property Name="katid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="katad" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="urunler">
+    <Key>
+      <PropertyRef Name="urunid" />
+    </Key>
+    <Property Name="urunid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunad" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="urunfiyat" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="urunresim" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="urunkateg" Type="Int32" Nullable="false" />
+    <Property Name="urunpuan" Type="Int32" Nullable="false" />
+    <Property Name="urunindirim" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yorumlar">
+    <Key>
+      <PropertyRef Name="yorumid" />
+    </Key>
+    <Property Name="yorumid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yorumuser" Type="Int32" Nullable="false" />
+    <Property Name="yorumurun" Type="Int32" Nullable="false" />
+    <Property Name="yorummetin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="yorumpuan" Type="Int32" Nullable="false" />
+    <Property Name="yorumonay" Type="Int32" Nullable="false" />
+    <Property Name="yorumtarih" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="sepette">
+    <Key>
+      <PropertyRef Name="sepetid" />
+    </Key>
+    <Property Name="sepetid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="suserid" Type="Int32" Nullable="false" />
+    <Property Name="surunid" Type="Int32" Nullable="false" />
+    <Property Name="sadet" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="altyorum">
+    <Key>
+      <PropertyRef Name="altyorumid" />
+    </Key>
+    <Property Name="altyorumid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="altyorumuser" Type="Int32" Nullable="false" />
+    <Property Name="altyorumustid" Type="Int32" Nullable="false" />
+    <Property Name="altyorummetin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="altyorumpuan" Type="Int32" Nullable="false" />
+    <Property Name="altyorumtarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="altyorumonay" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

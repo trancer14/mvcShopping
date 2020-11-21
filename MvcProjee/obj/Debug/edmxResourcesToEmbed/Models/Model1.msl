@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="userlar">
+      <EntityTypeMapping TypeName="Database1Model.userlar">
+        <MappingFragment StoreEntitySet="userlar">
+          <ScalarProperty Name="userrol" ColumnName="userrol" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="userad" ColumnName="userad" />
+          <ScalarProperty Name="usersifre" ColumnName="usersifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roller">
+      <EntityTypeMapping TypeName="Database1Model.roller">
+        <MappingFragment StoreEntitySet="roller">
+          <ScalarProperty Name="rolad" ColumnName="rolad" />
+          <ScalarProperty Name="rolid" ColumnName="rolid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kategori">
+      <EntityTypeMapping TypeName="Database1Model.kategori">
+        <MappingFragment StoreEntitySet="kategori">
+          <ScalarProperty Name="katad" ColumnName="katad" />
+          <ScalarProperty Name="katid" ColumnName="katid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urunler">
+      <EntityTypeMapping TypeName="Database1Model.urunler">
+        <MappingFragment StoreEntitySet="urunler">
+          <ScalarProperty Name="urunindirim" ColumnName="urunindirim" />
+          <ScalarProperty Name="urunpuan" ColumnName="urunpuan" />
+          <ScalarProperty Name="urunkateg" ColumnName="urunkateg" />
+          <ScalarProperty Name="urunresim" ColumnName="urunresim" />
+          <ScalarProperty Name="urunfiyat" ColumnName="urunfiyat" />
+          <ScalarProperty Name="urunad" ColumnName="urunad" />
+          <ScalarProperty Name="urunid" ColumnName="urunid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yorumlar">
+      <EntityTypeMapping TypeName="Database1Model.yorumlar">
+        <MappingFragment StoreEntitySet="yorumlar">
+          <ScalarProperty Name="yorumtarih" ColumnName="yorumtarih" />
+          <ScalarProperty Name="yorumonay" ColumnName="yorumonay" />
+          <ScalarProperty Name="yorumpuan" ColumnName="yorumpuan" />
+          <ScalarProperty Name="yorummetin" ColumnName="yorummetin" />
+          <ScalarProperty Name="yorumurun" ColumnName="yorumurun" />
+          <ScalarProperty Name="yorumuser" ColumnName="yorumuser" />
+          <ScalarProperty Name="yorumid" ColumnName="yorumid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sepette">
+      <EntityTypeMapping TypeName="Database1Model.sepette">
+        <MappingFragment StoreEntitySet="sepette">
+          <ScalarProperty Name="sadet" ColumnName="sadet" />
+          <ScalarProperty Name="surunid" ColumnName="surunid" />
+          <ScalarProperty Name="suserid" ColumnName="suserid" />
+          <ScalarProperty Name="sepetid" ColumnName="sepetid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="altyorum">
+      <EntityTypeMapping TypeName="Database1Model.altyorum">
+        <MappingFragment StoreEntitySet="altyorum">
+          <ScalarProperty Name="altyorumonay" ColumnName="altyorumonay" />
+          <ScalarProperty Name="altyorumtarih" ColumnName="altyorumtarih" />
+          <ScalarProperty Name="altyorumpuan" ColumnName="altyorumpuan" />
+          <ScalarProperty Name="altyorummetin" ColumnName="altyorummetin" />
+          <ScalarProperty Name="altyorumustid" ColumnName="altyorumustid" />
+          <ScalarProperty Name="altyorumuser" ColumnName="altyorumuser" />
+          <ScalarProperty Name="altyorumid" ColumnName="altyorumid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MvcProjee.Models.sepetim>
+@{
+    ViewBag.Title = "Sepet";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="/Site/Index">Ana Sayfa</a></span> <span>Cart</span></p>
+                <h1 class="mb-0 bread">Sepetim</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="cart-list">
+                    <table class="table">
+                        <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
+                                <th>Ürün</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+                                <th>Tutar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var urun in Model)
+                            {
+                            <tr class="text-center">
+                                <td class="product-remove"><a href="/Site/SepetUrunSil/@urun.sepetid"><span class="ion-ios-close"></span></a></td>
+
+                                <td class="image-prod"><div class="img" style="background-image:url(/images/urun/@urun.sepetresim);"></div></td>
+
+                                <td class="product-name">
+                                    <h3>@urun.sepeturun</h3>
+                                    <p></p>
+                                </td>
+
+                                <td class="price">@urun.sepetfiyat</td>
+
+                                <td class="quantity">
+                                    <a href="/Site/Arttir/@urun.sepetid"><span class="fa fa-3x fa-arrow-circle-o-up"></span></a>
+                                    <div class="input-group mb-3">
+
+                                        <input type="text" name="quantity" class="quantity form-control input-number" value="@urun.sepetadet" min="1" max="100">
+
+                                    </div>
+                                    <a href="/Site/Azalt/@urun.sepetid"><span class="fa fa-3x fa-arrow-circle-o-down"></span></a>
+                                </td>
+
+                                <td class="total">@(urun.sepetadet*urun.sepetfiyat)</td>
+                            </tr><!-- END TR-->
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                <div class="cart-total mb-3">
+                    <h3>Sepet Toplam</h3>
+                    
+                    <hr>
+                    <p class="d-flex total-price">
+                       
+                        <span>@Session["toplam"]</span>
+                    </p>
+                </div>
+                <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Satın Al</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+

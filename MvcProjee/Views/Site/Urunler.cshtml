@@ -1,0 +1,136 @@
+﻿@model IEnumerable<MvcProjee.Models.urunler>
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span></p>
+                <h1 class="mb-0 bread">Collection Products</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-10 order-md-last">
+                <div class="row">
+                    @foreach (var urun in Model)
+                    {
+                    <div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
+                        <div class="product">
+                            <a href="/Site/Detay/@urun.urunid" class="img-prod">
+                                <img class="img-fluid" src="~/images/urun/@urun.urunresim" alt="Colorlib Template">
+                                <span class="status">@urun.urunindirim</span>
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text py-3 px-3">
+                                <h3><a href="#">@urun.urunad</a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="mr-2 price-dc">@Convert.ToDouble(urun.urunfiyat)</span><span class="price-sale">@(Convert.ToDouble(urun.urunfiyat)*(100-(Convert.ToDouble(urun.urunindirim)))/100)</span></p>
+                                    </div>
+                                    <div class="rating">
+                                        <p class="text-right">
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="bottom-area d-flex px-3">
+                                    <a href="/Site/SepetEkle/@urun.urunid" class="add-to-cart text-center py-2 mr-1"><span>Sepete Ekle <i class="ion-ios-add ml-1"></i></span></a>
+                                    <a href="#" class="buy-now text-center py-2">Satın Al<span><i class="ion-ios-cart ml-1"></i></span></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                            <ul>
+                                <li><a href="/Site/Urunler/@((ViewBag.anlikSayfa - 1) < 1 ? 1: (ViewBag.anlikSayfa-1))">&lt;</a></li>
+                                @for (int i = (ViewBag.anlikSayfa + 4) > (int)ViewBag.UrunSayisi ? (int)ViewBag.UrunSayisi - 4 : (ViewBag.anlikSayfa - 1) < 0 ? 0 : ViewBag.anlikSayfa - 1; i < ((ViewBag.anlikSayfa + 4) < ViewBag.UrunSayisi ? ViewBag.anlikSayfa + 4 : ViewBag.UrunSayisi); i++)
+                                {
+
+                                    if (ViewBag.anlikSayfa == i+1 || (int)Session["anlik"]==0)
+                                    {
+                                        <li class="active"><a href="/Site/Urunler/@(i + 1)">@(i + 1)</a></li>
+                                        if ((int)Session["anlik"] == 0)
+                                        {
+                                            Session["anlik"] = 1;
+                                        }
+                                    }
+
+                                    else
+                                    {
+                                        <li><a href="/Site/Urunler/@(i + 1)">@(i + 1)</a></li>
+                                    }
+                                }
+                                @if (ViewBag.anlikSayfa + 4 < ViewBag.UrunSayisi)
+                                {
+                                    <li>...<a href="/Site/Urunler/@ViewBag.UrunSayisi">@ViewBag.UrunSayisi</a></li>
+                                }
+                                <li><a href="/Site/Urunler/@((ViewBag.anlikSayfa+1)>ViewBag.UrunSayisi?(ViewBag.UrunSayisi):(ViewBag.anlikSayfa!=0)?ViewBag.anlikSayfa+1:ViewBag.anlikSayfa+2)">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2 sidebar">
+                <div class="sidebar-box-2">
+                    <h2 class="heading mb-4"><a href="#">Clothing</a></h2>
+                    <ul>
+                        <li><a href="#">Shirts &amp; Tops</a></li>
+                        <li><a href="#">Dresses</a></li>
+                        <li><a href="#">Shorts &amp; Skirts</a></li>
+                        <li><a href="#">Jackets</a></li>
+                        <li><a href="#">Coats</a></li>
+                        <li><a href="#">Sleeveless</a></li>
+                        <li><a href="#">Trousers</a></li>
+                        <li><a href="#">Winter Coats</a></li>
+                        <li><a href="#">Jumpsuits</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-box-2">
+                    <h2 class="heading mb-4"><a href="#">Jeans</a></h2>
+                    <ul>
+                        <li><a href="#">Shirts &amp; Tops</a></li>
+                        <li><a href="#">Dresses</a></li>
+                        <li><a href="#">Shorts &amp; Skirts</a></li>
+                        <li><a href="#">Jackets</a></li>
+                        <li><a href="#">Coats</a></li>
+                        <li><a href="#">Jeans</a></li>
+                        <li><a href="#">Sleeveless</a></li>
+                        <li><a href="#">Trousers</a></li>
+                        <li><a href="#">Winter Coats</a></li>
+                        <li><a href="#">Jumpsuits</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-box-2">
+                    <h2 class="heading mb-2"><a href="#">Bags</a></h2>
+                    <h2 class="heading mb-2"><a href="#">Accessories</a></h2>
+                </div>
+                <div class="sidebar-box-2">
+                    <h2 class="heading mb-4"><a href="#">Shoes</a></h2>
+                    <ul>
+                        <li><a href="#">Nike</a></li>
+                        <li><a href="#">Addidas</a></li>
+                        <li><a href="#">Skechers</a></li>
+                        <li><a href="#">Jackets</a></li>
+                        <li><a href="#">Coats</a></li>
+                        <li><a href="#">Jeans</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

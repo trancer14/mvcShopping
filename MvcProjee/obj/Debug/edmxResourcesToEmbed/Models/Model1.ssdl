@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="altyorum">
+    <Key>
+      <PropertyRef Name="altyorumid" />
+    </Key>
+    <Property Name="altyorumid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="altyorumuser" Type="int" Nullable="false" />
+    <Property Name="altyorumustid" Type="int" Nullable="false" />
+    <Property Name="altyorummetin" Type="varchar(max)" />
+    <Property Name="altyorumpuan" Type="int" Nullable="false" />
+    <Property Name="altyorumtarih" Type="date" Nullable="false" />
+    <Property Name="altyorumonay" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="katid" />
+    </Key>
+    <Property Name="katid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="katad" Type="varchar" MaxLength="35" Nullable="false" />
+  </EntityType>
+  <EntityType Name="roller">
+    <Key>
+      <PropertyRef Name="rolid" />
+    </Key>
+    <Property Name="rolid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolad" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sepette">
+    <Key>
+      <PropertyRef Name="sepetid" />
+    </Key>
+    <Property Name="sepetid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="suserid" Type="int" Nullable="false" />
+    <Property Name="surunid" Type="int" Nullable="false" />
+    <Property Name="sadet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="urunler">
+    <Key>
+      <PropertyRef Name="urunid" />
+    </Key>
+    <Property Name="urunid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunad" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="urunfiyat" Type="money" Nullable="false" />
+    <Property Name="urunresim" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="urunkateg" Type="int" Nullable="false" />
+    <Property Name="urunpuan" Type="int" Nullable="false" />
+    <Property Name="urunindirim" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="userlar">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usersifre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userrol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yorumlar">
+    <Key>
+      <PropertyRef Name="yorumid" />
+    </Key>
+    <Property Name="yorumid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yorumuser" Type="int" Nullable="false" />
+    <Property Name="yorumurun" Type="int" Nullable="false" />
+    <Property Name="yorummetin" Type="text" />
+    <Property Name="yorumpuan" Type="int" Nullable="false" />
+    <Property Name="yorumonay" Type="int" Nullable="false" />
+    <Property Name="yorumtarih" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="altyorum" EntityType="Self.altyorum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategori" EntityType="Self.kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roller" EntityType="Self.roller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sepette" EntityType="Self.sepette" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="urunler" EntityType="Self.urunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userlar" EntityType="Self.userlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="yorumlar" EntityType="Self.yorumlar" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

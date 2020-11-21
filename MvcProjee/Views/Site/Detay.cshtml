@@ -1,0 +1,260 @@
+﻿@model MvcProjee.Models.urunler
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="~/Site/Index">Ana Sayfa</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
+                <h1 class="mb-0 bread">Product Single</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-5 ftco-animate">
+                <a href="images/menu-2.jpg" class="image-popup"><img src="~/images/urun/@Model.urunresim" class="img-fluid" alt="Colorlib Template"></a>
+            </div>
+            <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                <h3>@Model.urunad</h3>
+                <div class="rating d-flex">
+                    <p class="text-left mr-4">
+                        <a href="#" class="mr-2">@ViewBag.puanYildiz</a>
+                        @for (int i = 0; i < ViewBag.puanYildiz; i++)
+                        {
+                        <a href="#"><span class="icon-star"></span></a>
+                        }
+                        @for (int i = 0; i < 5 - ViewBag.puanYildiz;i++)
+                        {
+                        <a href="#"><span class="ion-ios-star-outline"></span></a>}
+                        
+                    </p>
+                    <p class="text-left mr-4">
+                        <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
+                    </p>
+                    <p class="text-left">
+                        <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+                    </p>
+                </div>
+                <p class="price"><span>@Model.urunfiyat</span></p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="form-group d-flex">
+                            <div class="select-wrap">
+                                <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                <select name="" id="" class="form-control">
+                                    <option value="">Small</option>
+                                    <option value="">Medium</option>
+                                    <option value="">Large</option>
+                                    <option value="">Extra Large</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="input-group col-md-6 d-flex mb-3">
+                        <span class="input-group-btn mr-2">
+                            <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
+                                <i class="ion-ios-remove"></i>
+                            </button>
+                        </span>
+                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                        <span class="input-group-btn ml-2">
+                            <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                <i class="ion-ios-add"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-12">
+                        <p style="color: #000;">80 piece available</p>
+                    </div>
+                </div>
+                <p><a href="cart.html" class="btn btn-black py-3 px-5">Sepete Ekle</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1" id="logout">
+            <div class="page-header">
+                <h3 class="reviews">Yorum</h3>
+                <div class="logout">
+                    <button class="btn btn-default btn-circle text-uppercase" type="button" onclick="$('#logout').hide(); $('#login').show()">
+                        <span class="glyphicon glyphicon-off"></span> Logout
+                    </button>
+                </div>
+            </div>
+            <div class="comment-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#comments-logout" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Yorumlar</h4></a></li>
+                    <li><a href="#add-comment" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">Yorum Ekle</h4></a></li>
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="comments-logout">
+                        <ul class="media-list">
+                            @foreach (var yorum in ViewBag.yorumlar)
+                            {
+
+                            <li class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
+                                </a>
+                                <div class="media-body">
+                                    <div class="well well-lg">
+                                        <h4 class="media-heading text-uppercase reviews">@yorum[3] </h4>
+                                        <ul class="media-date text-uppercase reviews list-inline">
+                                            <li></li>
+                                        </ul>
+                                        <p class="media-comment">
+                                            @yorum[0]
+
+                                        </p>
+
+                                        <p>@yorum[2]</p>
+                                        <p>Yorum Puan : @yorum[1]</p>
+                                        <p>
+                                            <a class="btn btn-primary btn-circle" data-toggle="collapse" href="#collapseExample_@yorum[4]" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <span class="glyphicon glyphicon-share-alt"></span>
+                                                Cevapla
+                                            </a>
+                                            <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyTwo_@yorum[4]"><span class="glyphicon glyphicon-comment"></span> 
+                                           
+                                            @foreach (var alty in ViewBag.altyorumlarim)
+                                            {
+                                                if (alty[5] == yorum[4])
+                                                {
+                                                    ViewBag.alt = Convert.ToInt32(ViewBag.alt) + 1;
+                                                }
+                                            }
+
+                                      @foreach (var deger in ViewBag.dalt)
+                                      {
+                                          if (Convert.ToInt32(yorum[4]) == deger[0])
+                                          {
+                                              @deger[1]
+                                          }
+                                      }
+                                      Yorum</a>
+
+                                        </p>
+                                        <div class="collapse" id="collapseExample_@yorum[4]">
+                                            <div class="card card-body">
+                                                <div class="tab-pane" id="add-comment">
+                                                    <form action="/Site/Cevapla" method="post" class="form-horizontal" id="commentFormCevapla" role="form">
+                                                        <input type="hidden" name="yorumurun" value="@ViewBag.urunid" />
+                                                        <input type="hidden" name="altyorumustid" value="@yorum[4]" />
+
+                                                        <div class="form-group">
+                                                            <label for="email" class="col-sm-2 control-label">Yorum</label>
+                                                            <div class="col-sm-10">
+                                                                <textarea class="form-control" name="altyorummetin" id="addComment" rows="5"></textarea>
+                                                            </div>
+                                                            <div class="col-sm-2">Ürün Puan</div>
+                                                            <div class="col-sm-10">
+                                                                <a href="#" onmouseover="puanver(1)" onmouseout="puansil()"><span id="yildiz1" class="ion-ios-star-outline"></span></a>
+                                                                <a href="#" onmouseover="puanver(2); "><span id="yildiz2" class="ion-ios-star-outline"></span></a>
+                                                                <a href="#" onmouseover="puanver(3); "><span id="yildiz3" class="ion-ios-star-outline"></span></a>
+                                                                <a href="#" onmouseover="puanver(4); "><span id="yildiz4" class="ion-ios-star-outline"></span></a>
+                                                                <a href="#" onmouseover="puanver(5); "><span id="yildiz5" class="ion-ios-star-outline"></span></a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> Yorum Ekle</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse" id="replyTwo_@yorum[4]">
+                                            <ul class="media-list">
+                                                @foreach (var altyorum in ViewBag.altyorumlarim)
+                                                {
+                                                    if (altyorum[5] == yorum[4])
+                                                    {
+                                                    <li class="media media-replied">
+
+                                                        <a class="pull-left" href="#">
+                                                            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg" alt="profile">
+                                                        </a>
+                                                        <div class="media-body">
+                                                            <div class="well well-lg">
+                                                                <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span>@altyorum[1]</h4>
+
+                                                                <p class="media-comment">
+                                                                    @altyorum[2]
+
+                                                                </p>
+                                                                <div style="float:right;width:250px" >
+                                                                    <ul style="float:left;list-style:none">
+                                                                        <li style="float:left;width:250px"><span>Puan : @altyorum[3]</span>
+                                                                        <span>Tarih :@altyorum[4]</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                           
+                                                    </div>
+                                                </li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                
+                            </li>
+                            }
+
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="add-comment">
+                        <form action="/Site/YorumEkle" method="post" class="form-horizontal" id="commentForm" role="form">
+                            <input type="hidden" name="yorumurun" value="@ViewBag.urunid" />
+                            
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Yorum</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" name="yorummetin" id="addComment" rows="5"></textarea>
+                                </div>
+                                <div class="col-sm-2">Ürün Puan</div>
+                                <div class="col-sm-10">
+                                    <a href="#" onclick="puanver(1)"><span class="ion-ios-star-outline"></span></a>
+                                    <a href="#" onclick="puanver(2)"><span class="ion-ios-star-outline"></span></a>
+                                    <a href="#" onclick="puanver(3)"><span class="ion-ios-star-outline"></span></a>
+                                    <a href="#" onclick="puanver(4)"><span class="ion-ios-star-outline"></span></a>
+                                    <a href="#" onclick="puanver(5)"><span class="ion-ios-star-outline"></span></a>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-success btn-circle text-uppercase" type="submit" id="submitComment"><span class="glyphicon glyphicon-send"></span> Yorum Ekle</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
